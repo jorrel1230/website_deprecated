@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,12 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'playfair-display': ['"Playfair Display"', ...defaultTheme.fontFamily.sans]
-      },
       colors: {
-        'theme-green': '#687553',
         'theme-white': '#F4F4F4',
+        'theme-green': '#687553',
+      },
+      fontFamily: {
+        'playfair-display': ['"Playfair Display"', 'sans-serif'],
       },
     },
   },
