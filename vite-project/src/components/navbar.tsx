@@ -9,6 +9,12 @@ const Navbar = () => {
     // Scroll event handler
     const handleScroll = () => {
         const currentScrollY = window.scrollY;
+        const maxScrollY = document.documentElement.scrollHeight - window.innerHeight; // Max scrollable value
+
+        // Ignore scroll if the bounce effect is happening (near top or bottom)
+        if (currentScrollY <= 0 || currentScrollY >= maxScrollY) {
+            return;
+        }
 
         if (!disableHide) {
             if (currentScrollY > lastScrollY) {

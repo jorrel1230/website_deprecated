@@ -2,8 +2,9 @@ import githubSVG from "../assets/github.svg";
 import instaSVG from "../assets/insta.svg";
 import linkedinSVG from "../assets/linkedin.svg";
 import emailPNG from "../assets/email.png";
+import { useEffect, useState } from "react";
 
-const SocialsBar = () => {
+const SocialsSVGSupported = () => {
     return (
         <div className="fixed bottom-0">
             <div className="h-[87.5vh] w-[5vw] relative">
@@ -86,6 +87,75 @@ const SocialsBar = () => {
 
             </div>
         </div>
+    )
+}
+
+const SocialsSVGUnsupported = () => {
+    return (
+        <div className="fixed bottom-0 h-[87.5vh] w-[5vw]">
+            <div className="relative h-full w-full">
+                <div className="absolute bottom-0">
+
+                    <a href="https://github.com/jorrel1230" className="group">
+                        <div className="bg-theme-darkgreen w-fit m-3 rounded-lg
+                                transition-all duration-300 ease-in-out
+                                group-hover:scale-110 group-hover:bg-theme-green">
+                            <img src={githubSVG} className="invert" alt="github link"/>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jorrel-rajan" className="group">
+                        <div className="bg-theme-darkgreen w-fit m-3 rounded-lg
+                                transition-all duration-300 ease-in-out
+                                group-hover:scale-110 group-hover:bg-theme-green">
+                            <img src={linkedinSVG} className="invert" alt="linkedin link"/>
+                        </div>
+                    </a>
+
+                    <a href="mailto:jorrel@princeton.edu" className="group">
+                        <div className="bg-theme-darkgreen w-fit m-3 rounded-lg
+                                transition-all duration-300 ease-in-out
+                                group-hover:scale-110 group-hover:bg-theme-green">
+                            <img src={emailPNG} className="invert scale-75" alt="email link"/>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/_jorrel/" className="group">
+                        <div className="bg-theme-darkgreen w-fit m-3 rounded-lg
+                                transition-all duration-300 ease-in-out
+                                group-hover:scale-110 group-hover:bg-theme-green">
+                            <img src={instaSVG} className="invert" alt="insta link"/>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
+const SocialsBar = () => {
+
+    const [shouldRenderSVG, setShouldRenderSVG] = useState(true);
+
+    useEffect(() => {
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        // Check if the browser is Safari
+        const isSafari = userAgent.includes('safari') && !userAgent.includes('chrome');
+
+        // Check if the device is an iPhone or iPad
+        const isiOS = /iphone|ipad|ipod/.test(userAgent);
+
+        // If both Safari or iOS, prevent SVG from rendering
+        if (isSafari || isiOS) {
+            setShouldRenderSVG(false);
+        }
+    }, []);
+
+
+    return (
+        shouldRenderSVG ? SocialsSVGSupported() : SocialsSVGUnsupported()
     )
 }
 
