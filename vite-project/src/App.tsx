@@ -6,9 +6,10 @@ function App() {
 
   return (
     <>
+        <Body />
         <Navbar />
         <SocialsBar />
-        <Body />
+
     </>
   )
 }
