@@ -7,11 +7,8 @@ function App() {
   return (
     <>
         <Navbar />
-        <div className='flex'>
-            <SocialsBar />
-            <Body />
-        </div>
-
+        <SocialsBar />
+        <Body />
     </>
   )
 }
