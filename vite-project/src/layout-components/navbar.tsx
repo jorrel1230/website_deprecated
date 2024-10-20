@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import DownloadButton from './downloadbutton.tsx';
+import DownloadButton from '../sub-components/downloadbutton.tsx';
 
 const Navbar = () => {
     const [showNavbar, setShowNavbar] = useState(true);
@@ -55,7 +55,7 @@ const Navbar = () => {
             }`}
         >
             <div className="group relative ml-5">
-                <a href="/">
+                <a href="/#landing_card">
                     <h1 className="font-playfair-display text-3xl text-theme-white pb-1">Jorrel Rajan</h1>
                 </a>
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-theme-white transition-all duration-300 group-hover:w-full"></span>

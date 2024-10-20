@@ -1,4 +1,4 @@
-import DownloadButton from "./downloadbutton.tsx";
+import DownloadButton from "../sub-components/downloadbutton.tsx";
 
 const Footer = () => {
     return (
