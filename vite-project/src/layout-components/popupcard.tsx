@@ -28,7 +28,7 @@ const PopupCard = () => {
 
                 {/* Popup content */}
                 <h2 className="text-4xl font-bold text-theme-darkgreen mb-4 font-playfair-display">Welcome!</h2>
-                <p className="text-2xl text-theme-green font-light font-playfair-display p-5">
+                <p className="text-2xl text-theme-green font-playfair-display p-5 font-light">
                     This website is still under construction. Thank you for your patience!
                 </p>
             </div>

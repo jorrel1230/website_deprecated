@@ -6,7 +6,7 @@ const LandingCard = () => {
         <SectionCard id="landing_card" title="">
             <div className="relative h-[70vh] flex items-center justify-center space-x-20">
                 <div className="">
-                    <p className="font-playfair-display text-xl text-theme-green">
+                    <p className="font-playfair-display text-xl text-theme-green font-bold">
                         Hi, I'm
                     </p>
                     <h1 className="font-playfair-display text-8xl text-theme-darkgreen">
